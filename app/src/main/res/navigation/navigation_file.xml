@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_file"
+    app:startDestination="@id/launcherFragment">
+    <fragment
+        android:id="@+id/launcherFragment"
+        android:name="com.furev.foodstick.FragmentLauncher"
+        android:label="LauncherFragment" >
+        <action
+            android:id="@+id/action_launcherFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/launcherFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_launcherFragment_to_fragmentRestaurants"
+            app:destination="@id/fragmentRestaurants" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.furev.foodstick.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentRegister"
+            app:destination="@id/fragmentRegister"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentFPassword1"
+            app:destination="@id/fragmentFPassword1"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentRestaurants"
+            app:destination="@id/fragmentRestaurants" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRegister"
+        android:name="com.furev.foodstick.FragmentRegister"
+        android:label="FragmentRegister" >
+        <action
+            android:id="@+id/action_fragmentRegister_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFPassword1"
+        android:name="com.furev.foodstick.FragmentFPassword1"
+        android:label="fragment_f_password1"
+        tools:layout="@layout/fragment_f_password1" >
+        <action
+            android:id="@+id/action_fragmentFPassword1_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_fragmentFPassword1_to_fragmentFPassword2"
+            app:destination="@id/fragmentFPassword2"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/fragmentFPassword1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFPassword2"
+        android:name="com.furev.foodstick.FragmentFPassword2"
+        android:label="FragmentFPassword2" >
+        <action
+            android:id="@+id/action_fragmentFPassword2_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/loginFragment" />
+        <argument
+            android:name="mobile_number"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRestaurants"
+        android:name="com.furev.foodstick.FragmentRestaurants"
+        android:label="FragmentRestaurants" >
+        <action
+            android:id="@+id/action_fragmentRestaurants_to_fragmentRestDetails"
+            app:destination="@id/fragmentRestDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRestDetails"
+        android:name="com.furev.foodstick.FragmentRestDetails"
+        android:label="FragmentRestDetails" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentRestDetails_to_fragmentCart"
+            app:destination="@id/fragmentCart" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCart"
+        android:name="com.furev.foodstick.FragmentCart"
+        android:label="FragmentCart" >
+        <action
+            android:id="@+id/action_fragmentCart_to_fragmentDone"
+            app:destination="@id/fragmentDone" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDone"
+        android:name="com.furev.foodstick.FragmentDone"
+        android:label="FragmentDone" >
+        <action
+            android:id="@+id/action_fragmentDone_to_fragmentRestaurants"
+            app:destination="@id/fragmentRestaurants" />
+    </fragment>
+</navigation>
